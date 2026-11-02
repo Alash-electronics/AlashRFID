@@ -1,8 +1,18 @@
-// AlashRFID: «обучение» карт. Первая карта, поднесённая в течение 10 секунд после включения, считается главной;
-// потом любая карта, поднесённая сразу после главной, добавляется в список. Список печатается строками addCard(...)
-// для вставки в скетч (в памяти платы он не хранится после перезагрузки).
-// Подключение RC522 (питание ТОЛЬКО 3.3 В!):  Uno / Nano:  SDA(SS) D10, SCK D13, MOSI D11, MISO D12, RST D9, 3.3V, GND
-//                                           ESP32:        SDA(SS) GPIO5, SCK GPIO18, MOSI GPIO23, MISO GPIO19, RST GPIO22, 3.3V, GND
+// [ru] AlashRFID: «обучение» карт. Первая карта, поднесённая в течение 10 секунд после включения, считается главной;
+//      потом любая карта, поднесённая сразу после главной, добавляется в список. Список печатается строками addCard(...)
+//      для вставки в скетч (в памяти платы он не хранится после перезагрузки).
+//      Подключение RC522 (питание ТОЛЬКО 3.3 В!):  Uno / Nano:  SDA(SS) D10, SCK D13, MOSI D11, MISO D12, RST D9, 3.3V, GND
+//                                                ESP32:        SDA(SS) GPIO5, SCK GPIO18, MOSI GPIO23, MISO GPIO19, RST GPIO22, 3.3V, GND
+// [kk] AlashRFID: карталарды «үйрету». Қосқаннан кейін 10 секунд ішінде жақындатылған бірінші карта басты болып саналады;
+//      содан кейін басты картадан тікелей кейін жақындатылған кез келген карта тізімге қосылады. Тізім скетчке қою үшін addCard(...) жолдарымен
+//      басылады (қайта жүктегеннен кейін тақта жадында сақталмайды).
+//      RC522 қосу (қуат ТЕК 3.3 В!):  Uno / Nano:  SDA(SS) D10, SCK D13, MOSI D11, MISO D12, RST D9, 3.3V, GND
+//                                    ESP32:        SDA(SS) GPIO5, SCK GPIO18, MOSI GPIO23, MISO GPIO19, RST GPIO22, 3.3V, GND
+// [en] AlashRFID: "learning" cards. The first card presented within 10 seconds after power-on is the master;
+//      then any card presented right after the master is added to the list. The list is printed as addCard(...) lines
+//      to paste into the sketch (it is not kept in the board memory after a reboot).
+//      Wiring of the RC522 (power ONLY 3.3 V!):  Uno / Nano:  SDA(SS) D10, SCK D13, MOSI D11, MISO D12, RST D9, 3.3V, GND
+//                                                ESP32:        SDA(SS) GPIO5, SCK GPIO18, MOSI GPIO23, MISO GPIO19, RST GPIO22, 3.3V, GND
 #if defined(ESP32)
 const uint8_t SS_PIN = 5, RST_PIN = 22;
 #elif defined(ESP8266)

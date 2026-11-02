@@ -1,6 +1,6 @@
 {
   "name": "AlashRFID",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy RC522 RFID library: UID text, allowed cards, repeat protection, wiring check, clear tips (ru/kk/en), built-in public-domain driver",
   "keywords": "RFID, RC522, MFRC522, NFC, MIFARE, card reader, access control, door lock",
   "repository": {
